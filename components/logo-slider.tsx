@@ -1,0 +1,90 @@
+"use client"
+
+import type React from "react"
+
+import { useEffect, useRef } from "react"
+import { motion, useAnimation, useInView } from "framer-motion"
+
+interface LogoSliderProps {
+  className?: string
+}
+
+const LogoSlider: React.FC<LogoSliderProps> = ({ className = "" }) => {
+  const controls = useAnimation()
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: false })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    }
+  }, [controls, inView])
+
+  const logos = [
+    {
+      name: "IBM",
+      src: "/placeholder.svg?height=60&width=120",
+      width: 120,
+    },
+    {
+      name: "Microsoft",
+      src: "/placeholder.svg?height=60&width=160",
+      width: 160,
+    },
+    {
+      name: "Khan Academy",
+      src: "/placeholder.svg?height=60&width=140",
+      width: 140,
+    },
+    {
+      name: "OpenTable",
+      src: "/placeholder.svg?height=60&width=150",
+      width: 150,
+    },
+  ]
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
+  return (
+    <div className={`w-full overflow-hidden ${className}`} ref={ref}>
+      <motion.div
+        className="flex items-center justify-center gap-16 md:gap-24 flex-wrap md:flex-nowrap"
+        variants={containerVariants}
+        initial="hidden"
+        animate={controls}
+      >
+        {logos.map((logo, index) => (
+          <motion.div key={index} className="py-4 px-6 flex items-center justify-center" variants={itemVariants}>
+            <img
+              src={logo.src || "/placeholder.svg"}
+              alt={`${logo.name} logo`}
+              className="h-12 w-auto object-contain filter grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
+              style={{ maxWidth: logo.width }}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  )
+}
+
+export default LogoSlider
