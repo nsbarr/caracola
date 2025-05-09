@@ -5,7 +5,6 @@ import { ArrowRight, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import SimpleSpiral from "@/components/simple-spiral"
 import LogoSlider from "@/components/logo-slider"
 
 export default function Home() {
@@ -57,7 +56,7 @@ export default function Home() {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="font-light tracking-wider text-xl flex items-center gap-2">
-            <SimpleSpiral className="h-8 w-8" />
+            <img src="/nautilus.jpg" alt="Caracola Studios Logo" className="h-8 w-8 object-cover" />
             <span>CARACOLA STUDIOS</span>
           </div>
           <nav className="hidden md:flex space-x-10">
@@ -123,12 +122,19 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              className="w-full md:w-1/3 flex justify-center md:justify-end"
+              className="w-full md:w-1/3 flex flex-col items-center md:items-end justify-center md:justify-end"
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
             >
-              <SimpleSpiral className="w-64 h-64 md:w-full md:h-auto max-w-md text-black opacity-90" />
+              <figure>
+                <img 
+                  src="/nautilus.jpg" 
+                  alt="Nautilus" 
+                  className="w-56 h-56 md:w-[90%] md:h-auto max-w-[90%] object-cover opacity-90" 
+                />
+                <figcaption className="text-xs italic text-gray-400 mt-2 text-center">Nautilus, by Rafael Araujo.</figcaption>
+              </figure>
             </motion.div>
           </div>
         </div>
@@ -355,13 +361,13 @@ export default function Home() {
           >
             <h2 className="text-3xl font-light mb-16 text-center tracking-tight">About Us</h2>
             <p className="text-lg text-gray-600 mb-20 max-w-3xl mx-auto text-center font-light">
-              We are two technologists and social impact veterans with 30+ years of combined experience supporting
+              We are technologists and social impact veterans with 30+ years of combined experience supporting
               organizations like Apple, IBM, Google, Khan Academy, Schmidt Futures, Cambiar Education, and One Project.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-6xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -377,7 +383,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
               </div>
               <h3 className="text-xl font-light mb-2 tracking-tight">Raphael Arar</h3>
-              <p className="text-gray-500 text-sm tracking-wide mb-4">CO-FOUNDER</p>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner, Design</p>
               <p className="text-gray-600 font-light">(Bio details to be added)</p>
             </motion.div>
 
@@ -391,7 +397,35 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
               </div>
               <h3 className="text-xl font-light mb-2 tracking-tight">Nick Barr</h3>
-              <p className="text-gray-500 text-sm tracking-wide mb-4">CO-FOUNDER</p>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner, Strategy</p>
+              <p className="text-gray-600 font-light">(Bio details to be added)</p>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="group">
+              <div className="relative overflow-hidden mb-8 aspect-[3/4]">
+                <img
+                  src="/placeholder.svg?height=600&width=450"
+                  alt="Kwaku Aning"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+              </div>
+              <h3 className="text-xl font-light mb-2 tracking-tight">Kwaku Aning</h3>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner, Development</p>
+              <p className="text-gray-600 font-light">(Bio details to be added)</p>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="group">
+              <div className="relative overflow-hidden mb-8 aspect-[3/4]">
+                <img
+                  src="/placeholder.svg?height=600&width=450"
+                  alt="Zach Landes"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+              </div>
+              <h3 className="text-xl font-light mb-2 tracking-tight">Zach Landes</h3>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner, Technology</p>
               <p className="text-gray-600 font-light">(Bio details to be added)</p>
             </motion.div>
           </motion.div>
@@ -428,7 +462,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-10 md:mb-0 flex items-center gap-3">
-              <SimpleSpiral className="h-6 w-6" />
+              <img src="/nautilus.jpg" alt="Caracola Studios Logo" className="h-6 w-6 object-cover" />
               <div className="font-light tracking-wider text-xl">CARACOLA STUDIOS</div>
               <p className="text-sm text-gray-500 font-light ml-2">
                 AI Transformation for Mission-Driven Organizations
