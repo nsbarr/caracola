@@ -6,15 +6,18 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import LogoSlider from "@/components/logo-slider"
+import * as Accordion from "@radix-ui/react-accordion"
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
     window.addEventListener("scroll", handleScroll)
+    setIsLoaded(true)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -84,6 +87,12 @@ export default function Home() {
             >
               TEAM
             </Link>
+            <Link
+              href="#journal"
+              className="text-gray-700 hover:text-black transition-colors duration-300 text-sm tracking-wide"
+            >
+              JOURNAL
+            </Link>
           </nav>
           <Button
             variant="ghost"
@@ -99,13 +108,18 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0)_60%)]"></div>
         <div className="container mx-auto px-6 relative">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
-            <motion.div className="max-w-2xl" initial="hidden" animate="visible" variants={fadeIn}>
+            <motion.div 
+              className="max-w-2xl" 
+              initial="hidden" 
+              animate={isLoaded ? "visible" : "hidden"} 
+              variants={fadeIn}
+            >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-10 leading-tight tracking-tight">
                 AI Transformation for <span className="font-normal">Mission-Driven</span> Organizations
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed font-light">
                 We help mission-driven organizations build their internal capacity to effectively wield AI technology
-                through thought partnership, hands-on execution, and applied research.
+                through a mix of thought partnership, hands-on execution, and applied research.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <Button className="rounded-none px-8 py-6 text-sm tracking-wide bg-black text-white hover:bg-gray-900 transition-colors duration-300 h-auto">
@@ -124,7 +138,7 @@ export default function Home() {
             <motion.div
               className="w-full md:w-1/3 flex flex-col items-center md:items-end justify-center md:justify-end"
               initial="hidden"
-              animate="visible"
+              animate={isLoaded ? "visible" : "hidden"}
               variants={fadeInRight}
             >
               <figure>
@@ -145,7 +159,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
-            whileInView="visible"
+            animate={isLoaded ? "visible" : "hidden"}
             viewport={{ once: true }}
             variants={fadeIn}
             className="text-center mb-12"
@@ -164,7 +178,7 @@ export default function Home() {
         <motion.div
           className="container mx-auto px-6 relative"
           initial="hidden"
-          whileInView="visible"
+          animate={isLoaded ? "visible" : "hidden"}
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
@@ -191,7 +205,7 @@ export default function Home() {
         <div className="container mx-auto px-6 relative">
           <motion.div
             initial="hidden"
-            whileInView="visible"
+            animate={isLoaded ? "visible" : "hidden"}
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
@@ -205,7 +219,7 @@ export default function Home() {
           <motion.div
             className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto"
             initial="hidden"
-            whileInView="visible"
+            animate={isLoaded ? "visible" : "hidden"}
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
@@ -259,14 +273,16 @@ export default function Home() {
           <motion.div
             className="mt-20 text-center"
             initial="hidden"
-            whileInView="visible"
+            animate={isLoaded ? "visible" : "hidden"}
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
             <p className="text-lg font-light mb-8">It all starts with a focused one-month Discovery Sprint</p>
             <Button className="rounded-none px-8 py-6 text-sm tracking-wide bg-black text-white hover:bg-gray-900 transition-colors duration-300 h-auto">
-              LEARN ABOUT OUR DISCOVERY SPRINT
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="/discovery-sprint" className="flex items-center">
+                LEARN ABOUT OUR DISCOVERY SPRINT
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </motion.div>
         </div>
@@ -280,7 +296,7 @@ export default function Home() {
         <motion.div
           className="container mx-auto px-6 relative"
           initial="hidden"
-          whileInView="visible"
+          animate={isLoaded ? "visible" : "hidden"}
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
@@ -294,50 +310,99 @@ export default function Home() {
               As your technology thought partner, we help you clarify your vision with impactful deliverables:
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-              <div className="flex items-center space-x-4 group">
-                <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
-                <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
-                  0-1 Vision Generation
-                </span>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
-                <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
-                  Strategic roadmapping and vision alignment
-                </span>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
-                <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
-                  Research and development
-                </span>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
-                <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
-                  Product requirements and design
-                </span>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
-                <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
-                  Implementation partner vetting
-                </span>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
-                <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
-                  Safety, ethics, and risk mitigation
-                </span>
-              </div>
-              <div className="flex items-center space-x-4 group">
-                <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
-                <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
-                  Training and capacity building
-                </span>
-              </div>
-            </div>
+            <Accordion.Root type="single" collapsible className="mb-12 w-full columns-1 md:columns-2 gap-6">
+              <Accordion.Item value="item-1" className="border-b block mb-4 break-inside-avoid">
+                <Accordion.Header>
+                  <Accordion.Trigger className="flex w-full items-center space-x-4 py-4 group text-left">
+                    <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
+                    <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
+                      0-1 Vision Generation
+                    </span>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="pl-8 pb-4 text-gray-500 text-sm italic transition-all duration-300 ease-in-out overflow-hidden data-[state=open]:max-h-40 data-[state=closed]:max-h-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0">
+                  We help you move from idea to actionable vision.
+                </Accordion.Content>
+              </Accordion.Item>
+              <Accordion.Item value="item-2" className="border-b block mb-4 break-inside-avoid">
+                <Accordion.Header>
+                  <Accordion.Trigger className="flex w-full items-center space-x-4 py-4 group text-left">
+                    <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
+                    <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
+                      Strategic roadmapping and vision alignment
+                    </span>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="pl-8 pb-4 text-gray-500 text-sm italic transition-all duration-300 ease-in-out overflow-hidden data-[state=open]:max-h-40 data-[state=closed]:max-h-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0">
+                  Align your team and set a clear path forward.
+                </Accordion.Content>
+              </Accordion.Item>
+              <Accordion.Item value="item-3" className="border-b block mb-4 break-inside-avoid">
+                <Accordion.Header>
+                  <Accordion.Trigger className="flex w-full items-center space-x-4 py-4 group text-left">
+                    <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
+                    <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
+                      Research and development
+                    </span>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="pl-8 pb-4 text-gray-500 text-sm italic transition-all duration-300 ease-in-out overflow-hidden data-[state=open]:max-h-40 data-[state=closed]:max-h-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0">
+                  Explore, prototype, and validate new solutions.
+                </Accordion.Content>
+              </Accordion.Item>
+              <Accordion.Item value="item-4" className="border-b block mb-4 break-inside-avoid">
+                <Accordion.Header>
+                  <Accordion.Trigger className="flex w-full items-center space-x-4 py-4 group text-left">
+                    <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
+                    <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
+                      Product requirements and design
+                    </span>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="pl-8 pb-4 text-gray-500 text-sm italic transition-all duration-300 ease-in-out overflow-hidden data-[state=open]:max-h-40 data-[state=closed]:max-h-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0">
+                  Define what to build and how it should work.
+                </Accordion.Content>
+              </Accordion.Item>
+              <Accordion.Item value="item-5" className="border-b block mb-4 break-inside-avoid">
+                <Accordion.Header>
+                  <Accordion.Trigger className="flex w-full items-center space-x-4 py-4 group text-left">
+                    <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
+                    <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
+                      Implementation partner vetting
+                    </span>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="pl-8 pb-4 text-gray-500 text-sm italic transition-all duration-300 ease-in-out overflow-hidden data-[state=open]:max-h-40 data-[state=closed]:max-h-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0">
+                  Find and evaluate the right technical partners.
+                </Accordion.Content>
+              </Accordion.Item>
+              <Accordion.Item value="item-6" className="border-b block mb-4 break-inside-avoid">
+                <Accordion.Header>
+                  <Accordion.Trigger className="flex w-full items-center space-x-4 py-4 group text-left">
+                    <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
+                    <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
+                      Safety, ethics, and risk mitigation
+                    </span>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="pl-8 pb-4 text-gray-500 text-sm italic transition-all duration-300 ease-in-out overflow-hidden data-[state=open]:max-h-40 data-[state=closed]:max-h-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0">
+                  Ensure your AI work is responsible and safe.
+                </Accordion.Content>
+              </Accordion.Item>
+              <Accordion.Item value="item-7" className="border-b block mb-4 break-inside-avoid">
+                <Accordion.Header>
+                  <Accordion.Trigger className="flex w-full items-center space-x-4 py-4 group text-left">
+                    <div className="w-px h-8 bg-gray-300 group-hover:bg-black transition-colors duration-300"></div>
+                    <span className="text-gray-600 font-light group-hover:text-black transition-colors duration-300">
+                      Training and capacity building
+                    </span>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="pl-8 pb-4 text-gray-500 text-sm italic transition-all duration-300 ease-in-out overflow-hidden data-[state=open]:max-h-40 data-[state=closed]:max-h-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0">
+                  Empower your team with the skills they need.
+                </Accordion.Content>
+              </Accordion.Item>
+            </Accordion.Root>
 
             <p className="text-lg text-gray-600 leading-relaxed font-light">
               The result is a high-quality, mission-aligned, significantly de-risked path to using AI to accelerate your
@@ -355,13 +420,13 @@ export default function Home() {
         <div className="container mx-auto px-6 relative">
           <motion.div
             initial="hidden"
-            whileInView="visible"
+            animate={isLoaded ? "visible" : "hidden"}
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
             <h2 className="text-3xl font-light mb-16 text-center tracking-tight">About Us</h2>
             <p className="text-lg text-gray-600 mb-20 max-w-3xl mx-auto text-center font-light">
-              We are technologists and social impact veterans with 30+ years of combined experience supporting
+              We are technologists and social impact veterans with 50+ years of combined experience supporting
               organizations like Apple, IBM, Google, Khan Academy, Schmidt Futures, Cambiar Education, and One Project.
             </p>
           </motion.div>
@@ -369,7 +434,7 @@ export default function Home() {
           <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-6xl mx-auto"
             initial="hidden"
-            whileInView="visible"
+            animate={isLoaded ? "visible" : "hidden"}
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
@@ -432,6 +497,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Journal Section */}
+      <section id="journal" className="py-32 bg-gray-50 relative overflow-hidden">
+        <div className="absolute left-0 top-0 w-[500px] h-[500px] opacity-[0.03] pointer-events-none">
+          <div className="w-full h-full bg-[url('/spiral-large.png')] bg-no-repeat bg-left-top bg-contain"></div>
+        </div>
+        <motion.div
+          className="container mx-auto px-6 relative"
+          initial="hidden"
+          animate={isLoaded ? "visible" : "hidden"}
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+        >
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-light mb-6 tracking-tight">The Caracola Journal</h2>
+              <p className="text-lg text-gray-600 font-light">
+                A quarterly publication exploring the frontiers of AI technology for social impact
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div>
+                <motion.div 
+                  className="relative aspect-[3/4] bg-white p-8 shadow-lg"
+                  variants={fadeInRight}
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0)_60%)]"></div>
+                  <div className="relative h-full flex flex-col">
+                    <div className="mb-8">
+                      <p className="text-sm tracking-wider text-gray-400 mb-4">LATEST ISSUE • Q2 2024</p>
+                      <h3 className="text-2xl font-light mb-4 tracking-tight">The Rise of Foundation Models in Social Impact</h3>
+                      <p className="text-gray-600 font-light">An in-depth exploration of how foundation models are transforming social sector organizations and what leaders need to know.</p>
+                    </div>
+                    <div className="mt-auto">
+                      <div className="flex items-center gap-4">
+                        <div className="h-px flex-1 bg-gray-200"></div>
+                        <span className="text-sm text-gray-400">04.2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-light mb-6 tracking-tight">Subscribe to Our Private Journal</h3>
+                <p className="text-gray-600 mb-8 font-light">
+                  Join mission-driven leaders receiving our quarterly deep dives into critical AI developments. Each issue provides actionable insights on emerging technologies and their implications for social impact organizations.
+                </p>
+                
+                <form className="space-y-4">
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your email address"
+                      className="w-full px-4 py-3 border border-gray-200 focus:border-black transition-colors duration-300 outline-none font-light"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Organization name"
+                      className="w-full px-4 py-3 border border-gray-200 focus:border-black transition-colors duration-300 outline-none font-light"
+                    />
+                  </div>
+                  <div>
+                    <Button className="w-full rounded-none px-8 py-6 text-sm tracking-wide bg-black text-white hover:bg-gray-900 transition-colors duration-300 h-auto">
+                      SUBSCRIBE TO THE JOURNAL
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                  <p className="text-sm text-gray-500 font-light">
+                    Published quarterly. Free for qualifying organizations.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-32 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
@@ -440,7 +585,7 @@ export default function Home() {
         <motion.div
           className="container mx-auto px-6 text-center relative"
           initial="hidden"
-          whileInView="visible"
+          animate={isLoaded ? "visible" : "hidden"}
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
@@ -492,6 +637,12 @@ export default function Home() {
                 className="text-gray-500 hover:text-black transition-colors duration-300 text-sm tracking-wide"
               >
                 TEAM
+              </Link>
+              <Link
+                href="#journal"
+                className="text-gray-500 hover:text-black transition-colors duration-300 text-sm tracking-wide"
+              >
+                JOURNAL
               </Link>
               <Link
                 href="#"

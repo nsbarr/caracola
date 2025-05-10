@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
 
 interface LogoSliderProps {
@@ -13,12 +12,17 @@ const LogoSlider: React.FC<LogoSliderProps> = ({ className = "" }) => {
   const controls = useAnimation()
   const ref = useRef(null)
   const inView = useInView(ref, { once: false })
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    if (inView) {
+    setIsLoaded(true)
+  }, [])
+
+  useEffect(() => {
+    if (inView && isLoaded) {
       controls.start("visible")
     }
-  }, [controls, inView])
+  }, [controls, inView, isLoaded])
 
   const logos = [
     {
