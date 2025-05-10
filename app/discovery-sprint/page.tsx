@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import nautilusImage from '../../public/nautilus.jpg'
 
 export default function DiscoverySprint() {
   return (
@@ -12,7 +13,7 @@ export default function DiscoverySprint() {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link href="/" className="font-light tracking-wider text-xl flex items-center gap-2">
             <Image
-              src="/nautilus.jpg"
+              src={nautilusImage}
               alt="Caracola Studios Logo"
               width={32}
               height={32}

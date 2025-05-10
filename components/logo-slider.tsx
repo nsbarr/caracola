@@ -4,6 +4,7 @@ import type React from "react"
 import { useEffect, useRef, useState } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
 import Image from "next/image"
+import placeholderLogo from '../public/placeholder.svg'
 
 interface LogoSliderProps {
   className?: string
@@ -28,22 +29,18 @@ const LogoSlider: React.FC<LogoSliderProps> = ({ className = "" }) => {
   const logos = [
     {
       name: "IBM",
-      src: "/placeholder.svg",
       width: 120,
     },
     {
       name: "Microsoft",
-      src: "/placeholder.svg",
       width: 160,
     },
     {
       name: "Khan Academy",
-      src: "/placeholder.svg",
       width: 140,
     },
     {
       name: "OpenTable",
-      src: "/placeholder.svg",
       width: 150,
     },
   ]
@@ -80,7 +77,7 @@ const LogoSlider: React.FC<LogoSliderProps> = ({ className = "" }) => {
         {logos.map((logo, index) => (
           <motion.div key={index} className="py-4 px-6 flex items-center justify-center" variants={itemVariants}>
             <Image
-              src={logo.src}
+              src={placeholderLogo}
               alt={`${logo.name} logo`}
               width={logo.width}
               height={60}

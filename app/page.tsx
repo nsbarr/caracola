@@ -9,6 +9,7 @@ import { motion } from "framer-motion"
 import LogoSlider from "@/components/logo-slider"
 import * as Accordion from "@radix-ui/react-accordion"
 import nautilusImage from '../public/nautilus.jpg'
+import placeholderImage from '../public/placeholder.svg'
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
@@ -62,7 +63,7 @@ export default function Home() {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="font-light tracking-wider text-xl flex items-center gap-2">
             <img
-              src="/nautilus.jpg"
+              src={nautilusImage.src}
               alt="Caracola Studios Logo"
               className="h-8 w-8 object-cover"
             />
@@ -179,7 +180,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="absolute right-0 top-0 w-[600px] h-[600px] opacity-[0.03] pointer-events-none">
-          <div className="w-full h-full bg-[url('/spiral-large.png')] bg-no-repeat bg-right-top bg-contain"></div>
+          <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right top', backgroundSize: 'contain' }}></div>
         </div>
         <motion.div
           className="container mx-auto px-6 relative"
@@ -206,7 +207,7 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="py-32 bg-white relative overflow-hidden">
         <div className="absolute left-0 bottom-0 w-[500px] h-[500px] opacity-[0.03] pointer-events-none">
-          <div className="w-full h-full bg-[url('/spiral-large.png')] bg-no-repeat bg-left-bottom bg-contain"></div>
+          <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: 'contain' }}></div>
         </div>
         <div className="container mx-auto px-6 relative">
           <motion.div
@@ -232,7 +233,7 @@ export default function Home() {
             <motion.div variants={fadeIn} className="group">
               <div className="border border-gray-100 p-10 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.03] pointer-events-none">
-                  <div className="w-full h-full bg-[url('/spiral-small.png')] bg-no-repeat bg-right-top bg-contain"></div>
+                  <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right top', backgroundSize: 'contain' }}></div>
                 </div>
                 <div className="w-16 h-16 border border-gray-200 flex items-center justify-center mb-8 relative">
                   <span className="text-2xl font-light">01</span>
@@ -248,7 +249,7 @@ export default function Home() {
             <motion.div variants={fadeIn} className="group">
               <div className="border border-gray-100 p-10 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.03] pointer-events-none">
-                  <div className="w-full h-full bg-[url('/spiral-small.png')] bg-no-repeat bg-right-top bg-contain"></div>
+                  <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right top', backgroundSize: 'contain' }}></div>
                 </div>
                 <div className="w-16 h-16 border border-gray-200 flex items-center justify-center mb-8">
                   <span className="text-2xl font-light">02</span>
@@ -263,7 +264,7 @@ export default function Home() {
             <motion.div variants={fadeIn} className="group">
               <div className="border border-gray-100 p-10 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.03] pointer-events-none">
-                  <div className="w-full h-full bg-[url('/spiral-small.png')] bg-no-repeat bg-right-top bg-contain"></div>
+                  <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right top', backgroundSize: 'contain' }}></div>
                 </div>
                 <div className="w-16 h-16 border border-gray-200 flex items-center justify-center mb-8">
                   <span className="text-2xl font-light">03</span>
@@ -297,7 +298,7 @@ export default function Home() {
       {/* Partnership Approach */}
       <section id="approach" className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.02] pointer-events-none">
-          <div className="w-full h-full bg-[url('/spiral-pattern.png')] bg-no-repeat bg-center bg-contain"></div>
+          <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'contain' }}></div>
         </div>
         <motion.div
           className="container mx-auto px-6 relative"
@@ -421,7 +422,7 @@ export default function Home() {
       {/* Team Section */}
       <section id="team" className="py-32 bg-white relative overflow-hidden">
         <div className="absolute right-0 bottom-0 w-[500px] h-[500px] opacity-[0.03] pointer-events-none">
-          <div className="w-full h-full bg-[url('/spiral-large.png')] bg-no-repeat bg-right-bottom bg-contain"></div>
+          <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom', backgroundSize: 'contain' }}></div>
         </div>
         <div className="container mx-auto px-6 relative">
           <motion.div
@@ -506,7 +507,7 @@ export default function Home() {
       {/* Journal Section */}
       <section id="journal" className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="absolute left-0 top-0 w-[500px] h-[500px] opacity-[0.03] pointer-events-none">
-          <div className="w-full h-full bg-[url('/spiral-large.png')] bg-no-repeat bg-left-top bg-contain"></div>
+          <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'left top', backgroundSize: 'contain' }}></div>
         </div>
         <motion.div
           className="container mx-auto px-6 relative"
@@ -586,7 +587,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-32 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
-          <div className="w-full h-full bg-[url('/spiral-pattern-white.png')] bg-repeat bg-center"></div>
+          <div className="w-full h-full" style={{ backgroundImage: `url(${placeholderImage.src})`, backgroundRepeat: 'repeat', backgroundPosition: 'center', backgroundSize: 'auto' }}></div>
         </div>
         <motion.div
           className="container mx-auto px-6 text-center relative"
@@ -614,7 +615,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-10 md:mb-0 flex items-center gap-3">
               <Image
-                src="/nautilus.jpg"
+                src={nautilusImage}
                 alt="Caracola Studios Logo"
                 width={24}
                 height={24}
