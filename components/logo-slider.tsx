@@ -28,22 +28,22 @@ const LogoSlider: React.FC<LogoSliderProps> = ({ className = "" }) => {
   const logos = [
     {
       name: "IBM",
-      src: "/placeholder.svg?height=60&width=120",
+      src: "/placeholder.svg",
       width: 120,
     },
     {
       name: "Microsoft",
-      src: "/placeholder.svg?height=60&width=160",
+      src: "/placeholder.svg",
       width: 160,
     },
     {
       name: "Khan Academy",
-      src: "/placeholder.svg?height=60&width=140",
+      src: "/placeholder.svg",
       width: 140,
     },
     {
       name: "OpenTable",
-      src: "/placeholder.svg?height=60&width=150",
+      src: "/placeholder.svg",
       width: 150,
     },
   ]
@@ -80,7 +80,7 @@ const LogoSlider: React.FC<LogoSliderProps> = ({ className = "" }) => {
         {logos.map((logo, index) => (
           <motion.div key={index} className="py-4 px-6 flex items-center justify-center" variants={itemVariants}>
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${logo.src}`}
+              src={logo.src}
               alt={`${logo.name} logo`}
               width={logo.width}
               height={60}

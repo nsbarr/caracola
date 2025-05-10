@@ -61,7 +61,7 @@ export default function Home() {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="font-light tracking-wider text-xl flex items-center gap-2">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nautilus.jpg`}
+              src="/nautilus.jpg"
               alt="Caracola Studios Logo"
               width={32}
               height={32}
@@ -150,7 +150,7 @@ export default function Home() {
             >
               <figure>
                 <Image 
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nautilus.jpg`}
+                  src="/nautilus.jpg"
                   alt="Nautilus"
                   width={224}
                   height={224}
@@ -617,7 +617,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-10 md:mb-0 flex items-center gap-3">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nautilus.jpg`}
+                src="/nautilus.jpg"
                 alt="Caracola Studios Logo"
                 width={24}
                 height={24}

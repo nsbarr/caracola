@@ -12,7 +12,7 @@ export default function DiscoverySprint() {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link href="/" className="font-light tracking-wider text-xl flex items-center gap-2">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nautilus.jpg`}
+              src="/nautilus.jpg"
               alt="Caracola Studios Logo"
               width={32}
               height={32}
