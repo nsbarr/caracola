@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import LogoSlider from "@/components/logo-slider"
@@ -59,7 +60,13 @@ export default function Home() {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="font-light tracking-wider text-xl flex items-center gap-2">
-            <img src="/nautilus.jpg" alt="Caracola Studios Logo" className="h-8 w-8 object-cover" />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nautilus.jpg`}
+              alt="Caracola Studios Logo"
+              width={32}
+              height={32}
+              className="h-8 w-8 object-cover"
+            />
             <span>CARACOLA STUDIOS</span>
           </div>
           <nav className="hidden md:flex space-x-10">
@@ -142,10 +149,12 @@ export default function Home() {
               variants={fadeInRight}
             >
               <figure>
-                <img 
-                  src="/nautilus.jpg" 
-                  alt="Nautilus" 
-                  className="w-56 h-56 md:w-[90%] md:h-auto max-w-[90%] object-cover opacity-90" 
+                <Image 
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nautilus.jpg`}
+                  alt="Nautilus"
+                  width={224}
+                  height={224}
+                  className="w-56 h-56 md:w-[90%] md:h-auto max-w-[90%] object-cover opacity-90"
                 />
                 <figcaption className="text-xs italic text-gray-400 mt-2 text-center">Nautilus, by Rafael Araujo.</figcaption>
               </figure>
@@ -607,7 +616,13 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-10 md:mb-0 flex items-center gap-3">
-              <img src="/nautilus.jpg" alt="Caracola Studios Logo" className="h-6 w-6 object-cover" />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nautilus.jpg`}
+                alt="Caracola Studios Logo"
+                width={24}
+                height={24}
+                className="h-6 w-6 object-cover"
+              />
               <div className="font-light tracking-wider text-xl">CARACOLA STUDIOS</div>
               <p className="text-sm text-gray-500 font-light ml-2">
                 AI Transformation for Mission-Driven Organizations

@@ -3,6 +3,7 @@
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
+import Image from "next/image"
 
 interface LogoSliderProps {
   className?: string
@@ -78,9 +79,11 @@ const LogoSlider: React.FC<LogoSliderProps> = ({ className = "" }) => {
       >
         {logos.map((logo, index) => (
           <motion.div key={index} className="py-4 px-6 flex items-center justify-center" variants={itemVariants}>
-            <img
-              src={logo.src || "/placeholder.svg"}
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${logo.src}`}
               alt={`${logo.name} logo`}
+              width={logo.width}
+              height={60}
               className="h-12 w-auto object-contain filter grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
               style={{ maxWidth: logo.width }}
             />

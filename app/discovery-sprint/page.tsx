@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 
 export default function DiscoverySprint() {
@@ -10,7 +11,13 @@ export default function DiscoverySprint() {
       <header className="w-full py-8 border-b border-gray-100 bg-white/80 backdrop-blur-md z-50">
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link href="/" className="font-light tracking-wider text-xl flex items-center gap-2">
-            <img src="/nautilus.jpg" alt="Caracola Studios Logo" className="h-8 w-8 object-cover" />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nautilus.jpg`}
+              alt="Caracola Studios Logo"
+              width={32}
+              height={32}
+              className="h-8 w-8 object-cover"
+            />
             <span>CARACOLA STUDIOS</span>
           </Link>
         </div>

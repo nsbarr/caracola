@@ -4,7 +4,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/caracola'
+  basePath: '/caracola',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/caracola'
+  }
 }
 
 module.exports = nextConfig
