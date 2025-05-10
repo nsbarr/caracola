@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import LogoSlider from "@/components/logo-slider"
 import * as Accordion from "@radix-ui/react-accordion"
+import nautilusImage from '../public/nautilus.jpg'
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
@@ -60,11 +61,9 @@ export default function Home() {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="font-light tracking-wider text-xl flex items-center gap-2">
-            <Image
+            <img
               src="/nautilus.jpg"
               alt="Caracola Studios Logo"
-              width={32}
-              height={32}
               className="h-8 w-8 object-cover"
             />
             <span>CARACOLA STUDIOS</span>
@@ -150,10 +149,8 @@ export default function Home() {
             >
               <figure>
                 <Image 
-                  src="/nautilus.jpg"
+                  src={nautilusImage}
                   alt="Nautilus"
-                  width={224}
-                  height={224}
                   className="w-56 h-56 md:w-[90%] md:h-auto max-w-[90%] object-cover opacity-90"
                 />
                 <figcaption className="text-xs italic text-gray-400 mt-2 text-center">Nautilus, by Rafael Araujo.</figcaption>

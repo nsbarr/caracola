@@ -35,20 +35,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Update next.config.js
-        run: |
-          echo "/** @type {import('next').NextConfig} */
-          const nextConfig = {
-            output: 'export',
-            images: {
-              unoptimized: true,
-            },
-            basePath: '/caracola'
-          }
-          module.exports = nextConfig" > next.config.js
+      - name: Copy image-loader.js
+        run: cat image-loader.js
+
+      - name: List public directory
+        run: ls -la public
 
       - name: Build with Next.js
         run: npm run build
+
+      - name: Debug output directory
+        run: find ./out -type f | grep -E '\.(jpg|png|svg)$'
 
       - name: Create .nojekyll
         run: touch ./out/.nojekyll
