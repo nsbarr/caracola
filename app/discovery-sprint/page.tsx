@@ -24,22 +24,79 @@ export default function DiscoverySprint() {
         </div>
       </header>
       <main className="flex-1 flex flex-col items-center justify-center px-6 py-20">
+        {/* Value Proposition */}
+        <div className="max-w-2xl w-full text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-light mb-4 tracking-tight">
+            Your First Month: <span className="font-normal">Discovery Sprint</span>
+          </h1>
+          <p className="text-lg text-gray-600 mb-6 font-light">
+            Accelerate your AI journey in 30 days with a proven, expert-led process designed for mission-driven organizations.
+          </p>
+          <ul className="flex flex-col md:flex-row gap-4 justify-center mb-4 text-left text-base text-gray-700 font-light">
+            <li>• Clarify your AI opportunities and align your team</li>
+            <li>• Validate ideas with rapid prototyping</li>
+            <li>• Walk away with a clear, actionable roadmap</li>
+          </ul>
+        </div>
+
+        {/* Timeline/Stepper */}
+        <div className="w-full max-w-3xl mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-2 font-semibold">1</div>
+              <div className="text-center">
+                <h2 className="text-lg font-semibold mb-1">Deep Dive & Alignment</h2>
+                <p className="text-gray-600 font-light text-sm">We immerse ourselves in your mission, challenges, and aspirations. Through interviews and workshops, we align on goals and success metrics.</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-2 font-semibold">2</div>
+              <div className="text-center">
+                <h2 className="text-lg font-semibold mb-1">Opportunity Mapping</h2>
+                <p className="text-gray-600 font-light text-sm">We identify and prioritize the most promising AI opportunities for your organization, balancing ambition with feasibility and impact.</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-2 font-semibold">3</div>
+              <div className="text-center">
+                <h2 className="text-lg font-semibold mb-1">Prototyping & Validation</h2>
+                <p className="text-gray-600 font-light text-sm">We rapidly prototype or simulate key solutions, gathering feedback from your team and stakeholders to validate direction.</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-2 font-semibold">4</div>
+              <div className="text-center">
+                <h2 className="text-lg font-semibold mb-1">Roadmap & Next Steps</h2>
+                <p className="text-gray-600 font-light text-sm">We deliver a clear, actionable roadmap and recommendations, setting you up for long-term success—whether you continue with us or take the reins yourself.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Deliverables Section */}
+        <div className="max-w-2xl w-full text-center mb-16">
+          <h3 className="text-2xl font-light mb-4">What You'll Walk Away With</h3>
+          <ul className="text-left text-base text-gray-700 font-light space-y-2 mx-auto max-w-md">
+            <li>• A prioritized list of AI opportunities tailored to your mission</li>
+            <li>• A validated prototype or concept</li>
+            <li>• A clear, actionable roadmap for next steps</li>
+            <li>• Stakeholder alignment and buy-in</li>
+          </ul>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="max-w-2xl w-full text-center"
         >
-          <h1 className="text-4xl md:text-5xl font-light mb-8 tracking-tight">
-            Your First Month: <span className="font-normal">Discovery Sprint</span>
-          </h1>
           <p className="text-lg text-gray-600 mb-10 font-light">
             Our Discovery Sprint is a focused, high-impact month designed to help mission-driven organizations rapidly clarify their AI opportunities, align stakeholders, and chart a clear, actionable path forward. Here's what you can expect:
           </p>
           <div className="grid gap-8 text-left mb-12">
             <div>
               <h2 className="text-xl font-semibold mb-2">Week 1: Deep Dive & Alignment</h2>
-              <p className="text-gray-600 font-light">We immerse ourselves in your mission, challenges, and aspirations. Through interviews and workshops, we align on goals and success metrics.</p>
+              <p className="text-gray-600 font-light">We immerse ourselves in your mission, challenges, and aspirations. Through interviews, journey maps, and workshops, we align on goals and success metrics.</p>
             </div>
             <div>
               <h2 className="text-xl font-semibold mb-2">Week 2: Opportunity Mapping</h2>

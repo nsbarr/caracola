@@ -125,7 +125,7 @@ export default function Home() {
                 AI Transformation for <span className="font-normal">Mission-Driven</span> Organizations
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed font-light">
-                We help mission-driven organizations build their internal capacity to effectively wield AI technology
+                We help mission-driven organizations thrive in the AI era
                 through a mix of thought partnership, hands-on execution, and applied research.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
