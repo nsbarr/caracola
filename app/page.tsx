@@ -469,7 +469,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
               </div>
               <h3 className="text-xl font-light mb-2 tracking-tight">Nick Barr</h3>
-              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner, Strategy</p>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner</p>
               <p className="text-gray-600 font-light">(Bio details to be added)</p>
             </motion.div>
 
@@ -483,7 +483,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
               </div>
               <h3 className="text-xl font-light mb-2 tracking-tight">Kwaku Aning</h3>
-              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner, Development</p>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner</p>
               <p className="text-gray-600 font-light">(Bio details to be added)</p>
             </motion.div>
 
@@ -496,8 +496,8 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
               </div>
-              <h3 className="text-xl font-light mb-2 tracking-tight">Zach Landes</h3>
-              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner, Technology</p>
+              <h3 className="text-xl font-light mb-2 tracking-tight">Melanie Dukes</h3>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner</p>
               <p className="text-gray-600 font-light">(Bio details to be added)</p>
             </motion.div>
           </motion.div>
