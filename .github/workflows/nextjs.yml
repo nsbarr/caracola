@@ -21,6 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: List files after checkout
+        run: ls -la
+        
+      - name: Check directory structure
+        run: |
+          pwd
+          find . -maxdepth 2 -type d | sort
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -51,12 +59,7 @@ jobs:
           static_site_generator: next
 
       - name: Install dependencies
-        run: |
-          if [ -f pnpm-lock.yaml ]; then
-            pnpm install --frozen-lockfile
-          else
-            pnpm install
-          fi
+        run: pnpm install --frozen-lockfile
 
       - name: Copy image-loader.js
         run: cat image-loader.js
