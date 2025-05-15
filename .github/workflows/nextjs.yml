@@ -59,7 +59,16 @@ jobs:
           static_site_generator: next
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
+        
+      - name: Ensure production config
+        run: |
+          if [ -f next.config.prod.mjs ]; then
+            cp -f next.config.prod.mjs next.config.mjs
+            echo "Using production config for build"
+          else
+            echo "Warning: Production config not found, using default config"
+          fi
 
       - name: Copy image-loader.js
         run: cat image-loader.js
