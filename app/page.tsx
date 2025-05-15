@@ -533,7 +533,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0)_60%)]"></div>
                   <div className="relative h-full flex flex-col">
                     <div className="mb-8">
-                      <p className="text-sm tracking-wider text-gray-400 mb-4">LATEST ISSUE • Q2 2024</p>
+                      <p className="text-sm tracking-wider text-gray-400 mb-4">LATEST ISSUE • Q2 2025</p>
                       <h3 className="text-2xl font-light mb-4 tracking-tight">The Rise of Foundation Models in Social Impact</h3>
                       <p className="text-gray-600 font-light">An in-depth exploration of how foundation models are transforming social sector organizations and what leaders need to know.</p>
                     </div>
