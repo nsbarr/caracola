@@ -59,12 +59,7 @@ jobs:
           static_site_generator: next
 
       - name: Install dependencies
-        run: |
-          if [ -f pnpm-lock.yaml ]; then
-            pnpm install --frozen-lockfile
-          else
-            pnpm install --no-frozen-lockfile
-          fi
+        run: pnpm install --no-frozen-lockfile
 
       - name: Copy image-loader.js
         run: cat image-loader.js
