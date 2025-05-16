@@ -1,70 +1,27 @@
 import { spawn } from 'child_process';
-import { rename, copyFile, access, constants } from 'fs/promises';
+import { copyFile } from 'fs/promises';
 import { existsSync } from 'fs';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
 
-// Get directory name in ESM
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const rootDir = resolve(__dirname, '..');
-
-async function switchConfig() {
+async function startDev() {
   try {
-    process.chdir(rootDir);
-    console.log('Current directory:', process.cwd());
-    
-    // Check if files exist before operations
-    const configExists = existsSync('next.config.mjs');
-    const prodConfigExists = existsSync('next.config.prod.mjs');
-    const devConfigExists = existsSync('next.config.dev.mjs');
-    
-    console.log(`Config file exists: ${configExists}`);
-    console.log(`Prod config exists: ${prodConfigExists}`);
-    console.log(`Dev config exists: ${devConfigExists}`);
-    
-    if (configExists && prodConfigExists) {
-      // Backup current config
-      console.log('Backing up current config...');
-      await copyFile('next.config.mjs', 'next.config.backup.mjs');
-      
-      // Use dev config if it exists, otherwise keep current
-      if (devConfigExists) {
-        console.log('Copying dev config...');
-        await copyFile('next.config.dev.mjs', 'next.config.mjs');
-      }
-    }
-    
-    // Start dev server
     console.log('Starting Next.js dev server...');
     const dev = spawn('next', ['dev'], { stdio: 'inherit' });
     
-    // Handle cleanup on exit
-    const cleanup = async () => {
-      console.log('Cleaning up...');
-      // Restore from backup if it exists
-      if (existsSync('next.config.backup.mjs')) {
-        console.log('Restoring from backup...');
-        await copyFile('next.config.backup.mjs', 'next.config.mjs');
-        await access('next.config.backup.mjs', constants.F_OK)
-          .then(() => rename('next.config.backup.mjs', 'next.config.backup.mjs.old'))
-          .catch(() => console.log('No backup to remove'));
-      }
-    };
-    
-    process.on('SIGINT', async () => {
-      await cleanup();
+    process.on('SIGINT', () => {
+      console.log('Dev server stopped');
       process.exit();
     });
     
-    dev.on('close', async (code) => {
-      await cleanup();
+    dev.on('close', (code) => {
+      if (code !== 0) {
+        console.error(`Dev server exited with code ${code}`);
+      }
       process.exit(code);
     });
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error starting dev server:', error);
     process.exit(1);
   }
 }
 
-switchConfig(); 
+startDev(); 

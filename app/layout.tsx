@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Caracola Studios | AI Transformation for Mission-Driven Organizations",
   description:
     "We help mission-driven organizations build their internal capacity to effectively wield AI technology through thought partnership, hands-on execution, and applied research.",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
