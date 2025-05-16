@@ -433,7 +433,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-light mb-16 text-center tracking-tight">About Us</h2>
             <p className="text-lg text-gray-600 mb-20 max-w-3xl mx-auto text-center font-light">
-              We are technologists and social impact veterans with 50+ years of combined experience supporting
+              We are technologists and social impact veterans with 20+ years of combined experience supporting
               organizations like Apple, IBM, Google, Khan Academy, Schmidt Futures, Cambiar Education, and One Project.
             </p>
           </motion.div>
@@ -445,6 +445,19 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
+                <motion.div variants={fadeIn} className="group">
+              <div className="relative overflow-hidden mb-8 aspect-[3/4]">
+                <img
+                  src="/placeholder.svg?height=600&width=450"
+                  alt="Kwaku Aning"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+              </div>
+              <h3 className="text-xl font-light mb-2 tracking-tight">Kwaku Aning</h3>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner</p>
+              <p className="text-gray-600 font-light">(Bio details to be added)</p>
+            </motion.div>
             <motion.div variants={fadeIn} className="group">
               <div className="relative overflow-hidden mb-8 aspect-[3/4]">
                 <img
@@ -473,25 +486,13 @@ export default function Home() {
               <p className="text-gray-600 font-light">(Bio details to be added)</p>
             </motion.div>
 
-            <motion.div variants={fadeIn} className="group">
-              <div className="relative overflow-hidden mb-8 aspect-[3/4]">
-                <img
-                  src="/placeholder.svg?height=600&width=450"
-                  alt="Kwaku Aning"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-              </div>
-              <h3 className="text-xl font-light mb-2 tracking-tight">Kwaku Aning</h3>
-              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner</p>
-              <p className="text-gray-600 font-light">(Bio details to be added)</p>
-            </motion.div>
+        
 
             <motion.div variants={fadeIn} className="group">
               <div className="relative overflow-hidden mb-8 aspect-[3/4]">
                 <img
                   src="/placeholder.svg?height=600&width=450"
-                  alt="Zach Landes"
+                  alt="Melanie Dukes"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
@@ -540,7 +541,7 @@ export default function Home() {
                     <div className="mt-auto">
                       <div className="flex items-center gap-4">
                         <div className="h-px flex-1 bg-gray-200"></div>
-                        <span className="text-sm text-gray-400">04.2024</span>
+                        <span className="text-sm text-gray-400">Q2 2025</span>
                       </div>
                     </div>
                   </div>
@@ -596,9 +597,9 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <h2 className="text-3xl font-light mb-10 tracking-tight">Ready to Transform Your Organization?</h2>
+          <h2 className="text-3xl font-light mb-10 tracking-tight">Ready to Explore What's Possible?</h2>
           <p className="text-lg mb-12 max-w-2xl mx-auto font-light">
-            Start your AI transformation journey with a team that understands both technology and social impact.
+            Start your AI journey with a team that deeply understands technology and social impact.
           </p>
           <Button
             variant="outline"
