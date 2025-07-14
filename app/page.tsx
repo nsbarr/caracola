@@ -449,7 +449,7 @@ export default function Home() {
               <div className="relative overflow-hidden mb-8 aspect-[3/4]">
                 <img
                   src="/placeholder.svg?height=600&width=450"
-                  alt="Kwaku Aning"
+                  alt=""
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
@@ -462,13 +462,13 @@ export default function Home() {
               <div className="relative overflow-hidden mb-8 aspect-[3/4]">
                 <img
                   src="/placeholder.svg?height=600&width=450"
-                  alt="Raphael Arar"
+                  alt=""
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
               </div>
               <h3 className="text-xl font-light mb-2 tracking-tight">Person 2</h3>
-              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner, Design</p>
+              <p className="text-gray-500 text-sm tracking-wide mb-4">Founding Partner</p>
               <p className="text-gray-600 font-light">(Bio details to be added)</p>
             </motion.div>
 
@@ -476,7 +476,7 @@ export default function Home() {
               <div className="relative overflow-hidden mb-8 aspect-[3/4]">
                 <img
                   src="/placeholder.svg?height=600&width=450"
-                  alt="Nick Barr"
+                  alt=""
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
@@ -492,7 +492,7 @@ export default function Home() {
               <div className="relative overflow-hidden mb-8 aspect-[3/4]">
                 <img
                   src="/placeholder.svg?height=600&width=450"
-                  alt="Melanie Dukes"
+                  alt=""
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
